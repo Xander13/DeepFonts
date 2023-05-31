@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Deep Font : Home</title>
+	<meta name="Create your custom fonts with help of ai create a best font taste." content="Deep Fonts">
+	<meta name="Alex Kauffman" content="Deep Fonts">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--styles-->
+	<!-- <link rel="shortcut icon" href="dflogo.svg" /> -->
+	<link rel="stylesheet" href="stylereset.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="mainstyle.css">
+	<!--open graphs-->
+	<meta property="og:title" content="Deep Fonts" />
+	<meta property="og:type" content="interavtive website" />
+	<meta property="og:url" content="http://www.deepfonts.com" />
+	<meta property="og:image" content="something goes here" />
+</head>
+
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+	<script src="p5.js"></script>
+	<script src="main.js"></script>
+	<script src="tensor.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#sortable").sortable();
+			$("#sortable").disableSelection();
+		});
+	</script>
+
+	<div class="container">
+		<nav>
+			<ul>
+				<li>
+					<a href="index.html">
+						<div class="logo">
+							<h1 style="font-weight: 900;">Deep Font</h1>
+						</div>
+					</a>
+				</li>
+				<li><a href="index.html"><span style="border-bottom: 2px solid #00f; padding-bottom: 6px;">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a id="myBtn" style="cursor: pointer;">Help</a></li>
+			</ul>
+		</nav>
+
+		<div class="welcome" id="welcomescreen">
+			<h1 id="changetxtwelcome">Welcome</h1>
+			<h3>Deep font is a machine learning web app for you to create many new different fonts by mixmatching popular fonts.</h3>
+			<button id="closewelcome">Lets make fonts!</button>
+			<div class="speachcontentTwo">
+				<div class="arrow" style="transform:rotate(180deg); padding-top: 38px; margin-right: 8px;">
+					<img src="photos/arrow.svg" width="100%">
+				</div>
+				<p>Learn how to use
+					this web app!</p>
+			</div>
+			<div class="speachcontentThree">
+				<div class="arrow" style="transform:rotateY(180deg); padding-top: 8px; margin-right: 8px;">
+					<img src="photos/arrow.svg" width="100%">
+				</div>
+				<p>Change the appearance 
+					to your liking!</p>
+			</div>
+		</div>
+
+		<div class="deepLetters" id="fontCanvas">
+			<!--P5 js goes here-->
+			<button class="saveoutput" id="saveButton"><i class="fa fa-save"></i></button>
+		</div>
+		<script src="processing.js"></script>
+
+		<div class="queue">
+			<!--title statment-->
+			<div class="queuetitle">
+				<h1>Your queue</h1>
+			</div>
+
+			<div class="queuelist" id="sortable">
+
+				<!-- <div class="items" draggable="true">
+					<div class="grabtool">
+						<div class="bar"></div>
+						<div class="bar">
+						</div>
+					</div>
+					<h1>Some Font Name</h1>
+				</div> -->
+
+			</div>
+
+			<button class="additems" id="myFontBtn">Add fonts</button>
+
+		</div>
+		<footer>
+			<div class="left">
+				<!--Dark Mode-->
+				<h3>Mode: <span style="font-weight: 700;">Light</span> | Dark</h3>
+			</div>
+			<div class="mid">
+				<h2>Kauffman &copy; 2020</h2>
+			</div>
+			<div class="right" style="font-weight: 700; padding-top: 11px;">
+				<h3>USA &#9662;</h3>
+			</div>
+		</footer>
+	</div>
+
+	<div class="fontList" id="myFontList">
+		<div class="howtocontent">
+			<label class="fontclose">&times;</label>
+			<h2>Choose your fonts</h2>
+			<div class="scrollable">
+				<!-- <table id="fontstable" ></table> -->
+				<ul id="dynamic-list"></ul>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="saveModal" id="saveModal">
+		<div class="howtocontent">
+			<label class="saveclose">&times;</label>
+			<h2>Export your fonts</h2>
+			<p>How would you like to save your fonts?</p>
+			<div class="choices">
+				<div class="webfont">
+					<img src="photos/abctypeicon.svg" width="100%">
+					<div class="checkbox">
+						<input type="checkbox" checked="checked">
+					</div>
+					<h5>Web Font Export</h5>
+				</div>
+				<div class="poster">
+					<img src="photos/abcpostericon.svg" width="100%">
+					<div class="checkbox">
+						<input type="checkbox">
+					</div>
+					<h5>Png Poster Export</h5>
+				</div>
+			</div>
+			<button style="width: 100px;">Save</button>
+			<button style="border: none; width: 80px;" id="saveCloseButton">Cancel</button>
+		</div>
+	</div>
+
+	<div class="howto" id="myModal">
+		<div class="howtocontent">
+			<label class="close">&times;</label>
+			<h2>Instructions</h2>
+			<section class="instructions">
+				<!--css only gallary how to instructions or scrollable instructions. Miguel css gallary-->
+				<div class="gallary">
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+					<div class="slideshow-container">
+
+						<div class="mySlides">
+							<div class="half1">
+								<h2>Insert</h2>
+								<br>
+								<p>Find fonts you like in the font list you wish to add into your Queue. You need at lease 2 fonts in order to make new fonts.</p>
+								<br>
+								<p>When you find your fonts of your choice, you will see your fonts on the left panel of the queue.</p>
+							</div>
+							<div class="half2">
+								<img src="photos/fontchoise3x.png" class="svgholders" alt="Image svg animation"
+									height="100%">
+							</div>
+						</div>
+
+						<div class="mySlides">
+							<div class="half1">
+								<h2>Watch</h2>
+								<br>
+								<p> Take a step back and watch the ML create the new fonts! You can
+									reorder the list to prioritize what font face you like and it will change the font to
+									your liking.
+								</p>
+							</div>
+							<div class="half2">
+								<img src="photos/letterforming.png" class="svgholders" alt="Image svg animation"
+									height="100%">
+							</div>
+						</div>
+
+						<div class="mySlides">
+							<div class="half1">
+								<h2>Print</h2>
+								<br>
+								<p>You can export your custom font to web font or poster font. Click save to save in your downloads and you will have a zip file of your
+									custom font you have created.</p>
+							</div>
+							<div class="half2">
+								<img src="photos/fontchoise3x.png" class="svgholders" alt="Image svg animation"
+									height="100%">
+							</div>
+						</div>
+					</div>
+
+					<div style="text-align:center; clear: both; position: relative; margin: auto; top: 20px;">
+						<span class="dot" onclick="currentSlide(1)"></span>
+						<span class="dot" onclick="currentSlide(2)"></span>
+						<span class="dot" onclick="currentSlide(3)"></span>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script src="main.js"></script>
+</body>
+
+</html>
