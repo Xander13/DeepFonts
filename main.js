@@ -157,13 +157,6 @@ $.getJSON("example.json", function (data) {
 
 
 
-//html of the items.
-//newFontDatas += '<div class="items" draggable="true"><div class="grabtool"><div class="bar"></div><div class="bar"></div></div><h1>' + value.fontName + '</h1></div></div>'
-
-
-
-
-
 
 
 

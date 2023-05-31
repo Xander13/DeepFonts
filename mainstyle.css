@@ -1,11 +1,34 @@
-@font-face{
+@font-face {
 	font-family: 'aslfont';
-	src: url('Typeface.ttf')  format('truetype'); /* Safari, Android, iOS */
+	src: url('Typeface.ttf') format('truetype');
+	/* Safari, Android, iOS */
 }
 
-@font-face{
+@font-face {
 	font-family: 'oldaslfont';
-	src: url('si5sFont.ttf')  format('truetype'); /* Safari, Android, iOS */
+	src: url('si5sFont.ttf') format('truetype');
+	/* Safari, Android, iOS */
+}
+
+body {
+	background-color: var(--light-color);
+	color: var(--dark-color);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root{
+	--dark-color: #00f;
+	--light-color: #ecf0f1;
+}
+
+.light-mode {
+	background-color: var(--light-color);
+	color: var(--dark-color);
+}
+
+.dark-mode {
+	background-color: var(--dark-color);
+	color: var(--light-color);
 }
 
 h1,
@@ -21,13 +44,17 @@ button,
 li {
 	/* font-family: 'Lato', sans-serif; */
 	font-family: 'Roboto Mono', monospace;
-	color: #00f;
+	/* color: #00f; */
 	text-decoration: none;
 }
 
+* {
+	cursor: pointer;
+}
+
 body {
-	background-color: #ecf0f1;
 	overflow-y: hidden;
+
 }
 
 .container {
@@ -44,19 +71,18 @@ nav {
 }
 
 .deepLetters {
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	box-sizing: border-box;
 	width: 75%;
 	height: 85vh;
 	border-right: none;
-	background-color: #ecf0f1;
 	position: relative;
 }
 
-.saveoutput{
+.saveoutput {
 	position: absolute;
-	border: 2px solid #00f;
-	background-color: #ecf0f1;
+	border: 2px solid var(--dark-color);
+	background-color: var(--light-color);
 	margin: 8px;
 	padding: 16px;
 	margin-right: 16px;
@@ -67,7 +93,7 @@ nav {
 	transition: 0.1s ease-in;
 }
 
-.saveoutput i{
+.saveoutput i {
 	font-size: 32px;
 	position: absolute;
 	top: 6px;
@@ -76,28 +102,29 @@ nav {
 	margin: auto;
 }
 
-.saveoutput:hover, .saveModal button:hover, .welcome button:hover{
+.saveoutput:hover,
+.saveModal button:hover,
+.welcome button:hover {
 	transition: 0.1s ease-in;
-	background-color: #00f;
-	color: #ecf0f1;
+	background-color: var(--dark-color);
+	color: var(--light-color);
 }
 
 
 .queue {
 	position: relative;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	box-sizing: border-box;
 	width: 25%;
 	height: 85vh;
-	background-color: #ecf0f1;
 }
 
-.queuetitle{
+.queuetitle {
 	height: 24px;
 	padding: 16px;
-	background-color: #ecf0f1;
-	border-bottom: 2px solid #00f;
-	border-left: 1px solid #0000ff;
+	background-color: var(--light-color);
+	border-bottom: 2px solid var(--dark-color);
+	border-left: 1px solid var(--dark-color);
 }
 
 .queuetitle h1 {
@@ -108,21 +135,21 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	height: 60px;
-	border-top: 2px solid #00f;
-	background-color: #ecf0f1;
-	border-left: 1px solid #0000ff;
+	border-top: 2px solid var(--dark-color);
+	background-color: var(--light-color);
+	border-left: 1px solid var(--dark-color);
 }
 
 .items h1 {
 	width: 148px;
 }
 
-.items:first-child{
+.items:first-child {
 	border-top: none;
 }
 
 .items:last-child {
-	border-bottom: 2px solid #00f;
+	border-bottom: 2px solid var(--dark-color);
 }
 
 .items h1 {
@@ -143,17 +170,17 @@ nav {
 	height: 2px;
 	width: 20px;
 	margin-bottom: 4px;
-	background-color: #00f;
+	background-color: var(--dark-color);
 }
 
 .imageholder {
-	border-left: 2px solid #00f;
+	border-left: 2px solid var(--dark-color);
 	width: 50%;
 	height: 100%;
 }
 
 button {
-	background-color: #ecf0f1;
+	background-color: var(--light-color);
 	border: none;
 	cursor: pointer;
 }
@@ -161,7 +188,7 @@ button {
 .additems {
 	position: absolute;
 	bottom: 0;
-	border-top: 2px dashed #00f;
+	border-top: 2px dashed var(--dark-color);
 	box-sizing: border-box;
 	height: 60px;
 	width: 100%;
@@ -170,12 +197,12 @@ button {
 	text-align: center;
 	letter-spacing: 1px;
 	font-size: 18px;
-	border-left: 1px solid #0000ff;
+	border-left: 1px solid var(--dark-color);
 }
 
 .additems:hover {
-	background-color: #00f;
-	color: #ecf0f1;
+	background-color: var(--dark-color);
+	color: var(--light-color);
 }
 
 nav ul {
@@ -189,7 +216,7 @@ nav ul li {
 	height: 100;
 	text-align: center;
 	padding: 21px;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	border-bottom: none;
 }
 
@@ -200,14 +227,14 @@ nav ul li:nth-child(3) {
 }
 
 nav ul li a {
-	color: #00f;
+	color: var(--dark-color);
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 
-nav ul li a:hover{
-	border-bottom: 2px solid #00f; 
+nav ul li a:hover {
+	border-bottom: 2px solid var(--dark-color);
 	padding-bottom: 6px;
 }
 
@@ -217,16 +244,16 @@ footer {
 	box-sizing: border-box;
 	width: 100%;
 	height: 40px;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	border-top: none;
-	color: #00f;
+	color: var(--dark-color);
 }
 
 .left {
 	box-sizing: border-box;
 	width: 20%;
 	height: 100%;
-	border-right: 2px solid #00f;
+	border-right: 2px solid var(--dark-color);
 	text-align: center;
 }
 
@@ -235,7 +262,7 @@ footer {
 	box-sizing: border-box;
 	width: 60%;
 	height: 100%;
-	border-right: 2px solid #00f;
+	border-right: 2px solid var(--dark-color);
 	text-align: center;
 	padding: 10px;
 }
@@ -257,7 +284,7 @@ footer {
 /*instructions page*/
 .howto,
 .fontList,
-.saveModal{
+.saveModal {
 	position: absolute;
 	z-index: 100;
 	width: 900px;
@@ -266,8 +293,8 @@ footer {
 	right: 0;
 	top: 25%;
 	margin: auto;
-	border: 2px solid #00f;
-	background-color: #ecf0f1;
+	border: 2px solid var(--dark-color);
+	background-color: var(--light-color);
 	display: none;
 }
 
@@ -296,10 +323,10 @@ footer {
 
 .close:hover,
 .fontclose:hover,
-.saveclose:hover{
+.saveclose:hover {
 	transform: scale(1.2);
 	transition: 0.1s ease-out;
-} 
+}
 
 .instructions {
 	padding-top: 24px;
@@ -320,16 +347,16 @@ footer {
 	z-index: 333;
 	top: 260px;
 	width: auto;
-	color: #00f;
+	color: var(--dark-color);
 	font-size: 32px;
 	user-select: none;
 }
 
-.gallary a{
+.gallary a {
 	transition: 0.1s ease-out;
 }
 
-.gallary a:hover{
+.gallary a:hover {
 	transform: scale(1.2);
 	transition: 0.1s ease-out;
 }
@@ -345,7 +372,7 @@ footer {
 	height: 12px;
 	width: 12px;
 	margin: 0 2px;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	border-radius: 50%;
 	display: inline-block;
 	margin-top: 32px;
@@ -353,10 +380,10 @@ footer {
 
 .active,
 .dot:hover {
-	background-color: #00f;
+	background-color: var(--dark-color);
 }
 
-.dot:hover{
+.dot:hover {
 	transform: scale(1.2);
 	transition: 0.1s ease-out;
 }
@@ -381,7 +408,7 @@ footer {
 	float: left;
 }
 
-.mySlides .half2 img{
+.mySlides .half2 img {
 	height: 340px;
 	width: 300px;
 	margin-left: 36px;
@@ -403,40 +430,40 @@ footer {
 .svgholders {
 	width: 100%;
 	height: 100%;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 }
 
-.fontList h2{
+.fontList h2 {
 	padding-left: 10px;
 }
 
-.fontList li{
+.fontList li {
 	width: 800px !important;
 	display: flex;
 	justify-content: space-between;
 }
 
-.fontList button{
-	background-color: #ecf0f1;
+.fontList button {
+	background-color: var(--light-color);
 	border: none;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	margin-right: 10px;
 }
 
-.fontList li{
+.fontList li {
 	font-size: 32px;
 }
 
-.fontList ul li{
+.fontList ul li {
 	padding-bottom: 12px;
 	width: 500px;
 	padding-top: 10px;
 	padding-left: 10px;
 }
 
-.fontList li:hover{
-	background-color: #00f;
-	color: #ecf0f1;
+.fontList li:hover {
+	background-color: var(--dark-color);
+	color: var(--light-color);
 }
 
 .fontList .scrollable {
@@ -446,56 +473,56 @@ footer {
 	margin-top: 32px;
 }
 
-.scrollable::-webkit-scrollbar{
+.scrollable::-webkit-scrollbar {
 	width: 1em;
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-	background-color: #00f;
+	background-color: var(--dark-color);
 }
 
 /*########About Page###########*/
 .aboutblock {
 	width: 100%;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	box-sizing: border-box;
 	height: 85vh;
-	background-color: #ecf0f1;
+	background-color: var(--light-color);
 }
 
-.aboutcontainer{
+.aboutcontainer {
 	max-width: 1600px;
 	margin: auto;
 }
 
-.scrolablestuff{
+.scrolablestuff {
 	overflow: auto;
 	height: 100%;
 	width: 100%;
 	overflow-x: hidden;
 }
 
-.scrolablestuff::-webkit-scrollbar{
+.scrolablestuff::-webkit-scrollbar {
 	width: 1em;
 }
 
 .scrolablestuff::-webkit-scrollbar-thumb {
-	background-color: #00f;
+	background-color: var(--dark-color);
 }
 
-.welcome{
+.welcome {
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
 	top: 0px;
 	z-index: 12;
 	margin: 32px;
-	border: 2px solid #0000ff;
+	border: 2px solid var(--dark-color);
 	box-sizing: border-box;
-	background-color: #ecf0f1;
+	background-color: var(--light-color);
 }
 
-.welcomestatement{
+.welcomestatement {
 	height: 700px;
 	width: 100%;
 	margin: auto;
@@ -503,17 +530,17 @@ footer {
 	padding: 32px;
 }
 
-.welcomestatement h1{
+.welcomestatement h1 {
 	margin-top: 100px;
 	font-size: 8vw;
-	color: #0000ff;
+	color: var(--dark-color);
 	padding-bottom: 32px;
 	width: 100%;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 
-.welcomestatement p{
+.welcomestatement p {
 	padding-top: 32px;
 	font-size: 18px;
 	line-height: 24px;
@@ -522,12 +549,12 @@ footer {
 
 }
 
-.addfontbutton{
+.addfontbutton {
 	font-weight: bold;
 	letter-spacing: 1px;
 }
 
-.mouse::before{
+.mouse::before {
 	content: "";
 	width: 15px;
 	height: 15px;
@@ -539,18 +566,19 @@ footer {
 
 }
 
-.circles{
+.circles {
 	height: 960px;
 	position: relative;
 	margin-left: 64px;
 	margin-right: 64px;
 }
 
-.ringOne, .ringTwo{
+.ringOne,
+.ringTwo {
 	height: 800px;
 	width: 800px;
 	border-radius: 900px;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	position: absolute;
 	text-align: center;
 	font-weight: bold;
@@ -558,11 +586,11 @@ footer {
 	font-size: 24px;
 }
 
-.ringTwo{
+.ringTwo {
 	margin-top: 186px;
 }
 
-.deepfontsinnercircle{
+.deepfontsinnercircle {
 	transform: rotate(15.7deg);
 	position: absolute;
 	left: 0;
@@ -574,7 +602,7 @@ footer {
 	margin-top: 64px;
 }
 
-.deepfonttxt{
+.deepfonttxt {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -587,95 +615,99 @@ footer {
 	top: 464px;
 }
 
-.deepfonttxt h3{
-	color: #ecf0f1;
+.deepfonttxt h3 {
+	color: var(--light-color);
 	line-height: 32px;
 }
 
-@keyframes leftCircleSlideIn{
-	0%{
+@keyframes leftCircleSlideIn {
+	0% {
 		left: -800px;
 	}
-	100%{
+
+	100% {
 		left: 0px;
 	}
 }
 
-@keyframes rightcircleSlideIn{
-	0%{
+@keyframes rightcircleSlideIn {
+	0% {
 		right: -800px;
 	}
-	100%{
+
+	100% {
 		right: 0px;
 	}
 }
 
-@keyframes fadein{
-	0%{
+@keyframes fadein {
+	0% {
 		opacity: 0;
 	}
-	100%{
+
+	100% {
 		opacity: 1;
 	}
 }
 
 
-.ringOne{
+.ringOne {
 	/* animation: leftCircleSlideIn 2s ease-in-out; */
 	position: absolute;
 	left: 0px;
 }
 
-.ringTwo{
+.ringTwo {
 	/* animation: rightcircleSlideIn 2s ease-in-out; */
 	position: absolute;
 	right: 0px;
 }
 
-.ringOne h3, .ringTwo h3{
+.ringOne h3,
+.ringTwo h3 {
 	width: 100%;
 	height: 100%;
 	position: relative;
 	top: calc(100%/2);
 }
 
-.passages{
+.passages {
 	height: 2100px;
 	width: 100%;
 }
 
-.passages h3{
+.passages h3 {
 	padding-top: 148px;
 	font-size: 64px;
 	padding-bottom: 32px;
 }
 
-.passages h2{
+.passages h2 {
 	padding-top: 32px;
 	font-size: 24px;
 	font-weight: bold;
 }
 
-.passages p{
+.passages p {
 	font-size: 18px;
 	line-height: 26px;
 	padding-right: 32px;
 }
 
-.passages .half2{
+.passages .half2 {
 	padding-left: 32px;
-	border: 1px solid #00f;
+	border: 1px solid var(--dark-color);
 	height: auto;
 	margin-top: 116px;
 }
 
 /*#############Save Modeal##############*/
-.saveModal h2{
+.saveModal h2 {
 	font-weight: 900;
 	padding-bottom: 36px;
 }
 
-.choices{
+.choices {
 	padding-top: 16px;
 	width: 100%;
 	display: flex;
@@ -684,15 +716,17 @@ footer {
 	height: 356px;
 }
 
-.webfont, .poster{
+.webfont,
+.poster {
 	width: 49%;
 	height: 100%;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	box-sizing: border-box;
 	position: relative;
 }
 
-.webfont h5, .poster h5{
+.webfont h5,
+.poster h5 {
 	position: relative;
 	width: 100%;
 	text-align: center;
@@ -700,7 +734,7 @@ footer {
 	font-size: 24px;
 }
 
-.checkbox{
+.checkbox {
 	position: absolute;
 	width: 32px;
 	height: 32px;
@@ -710,7 +744,7 @@ footer {
 	margin: auto;
 }
 
-.checkbox input{
+.checkbox input {
 	margin-top: auto;
 	border-radius: 100px;
 	width: 32px;
@@ -718,7 +752,8 @@ footer {
 	outline: none;
 }
 
-.webfont img, .poster img{
+.webfont img,
+.poster img {
 	padding-top: 32px;
 	width: 250px;
 	position: absolute;
@@ -727,16 +762,16 @@ footer {
 	margin: auto;
 }
 
-.webfont{
+.webfont {
 	margin-right: 8px;
 }
 
-.poster{
+.poster {
 	margin-left: 8px;
 }
 
-.saveModal button{
-	border: 2px solid #00f;
+.saveModal button {
+	border: 2px solid var(--dark-color);
 	float: right;
 	padding: 12px;
 	margin-top: 12px;
@@ -744,19 +779,19 @@ footer {
 }
 
 /*#############welcome#########*/
-.welcome{
+.welcome {
 	position: absolute;
 	display: block;
 	top: 28px;
 	left: -32px;
 	width: 100%;
-	border: 2px solid #00f;
+	border: 2px solid var(--dark-color);
 	box-sizing: border-box;
 	height: 85vh;
-	background-color: #ecf0f1;
+	background-color: var(--light-color);
 }
 
-.welcome h1{
+.welcome h1 {
 	font-size: 250px;
 	width: 100%;
 	text-align: center;
@@ -764,7 +799,7 @@ footer {
 	top: calc(50%/2);
 }
 
-.welcome h3{
+.welcome h3 {
 	position: relative;
 	font-size: 24px;
 	width: 35em;
@@ -776,10 +811,10 @@ footer {
 	line-height: 36px;
 }
 
-.welcome button{
+.welcome button {
 	border: none;
-	border: 2px solid #00f;
-	background-color: #ecf0f1;
+	border: 2px solid var(--dark-color);
+	background-color: var(--light-color);
 	padding: 16px;
 	font-size: 18px;
 	position: absolute;
@@ -792,37 +827,40 @@ footer {
 	letter-spacing: 1px;
 }
 
-.welcome .arrow{
+.welcome .arrow {
 	width: 48px;
 	position: relative;
 	padding-right: 8px;
 }
 
-.speachcontentOne, .speachcontentTwo, .speachcontentThree{
+.speachcontentOne,
+.speachcontentTwo,
+.speachcontentThree {
 	position: absolute;
 	width: 200px;
 	height: 50px;
-	background-color: #ecf0f1;
+	background-color: var(--light-color);
 	line-height: 20px;
 	padding: 4px;
 	display: flex;
 	flex-wrap: nowrap;
 }
-.speachcontentOne{
+
+.speachcontentOne {
 	position: fixed;
 	width: 250px;
 	left: 30%;
-	top: 290px;	
+	top: 290px;
 }
 
-.speachcontentTwo{
+.speachcontentTwo {
 	width: 200px;
 	position: absolute;
 	top: 32px;
-	right: 32px;	
+	right: 32px;
 }
 
-.speachcontentThree{
+.speachcontentThree {
 	width: 250px;
 	position: absolute;
 	bottom: 32px;

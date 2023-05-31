@@ -35,7 +35,6 @@
 			$("#sortable").disableSelection();
 		});
 	</script>
-
 	<div class="container">
 		<nav>
 			<ul>
@@ -46,41 +45,42 @@
 						</div>
 					</a>
 				</li>
-				<li><a href="index.html"><span style="border-bottom: 2px solid #00f; padding-bottom: 6px;">Home</a></li>
+				<li><a href="index.html"><span style="border-bottom: 2px solid var(--dark-color); padding-bottom: 6px;">Home</a></li>
 				<li><a href="about.html">About</a></li>
 				<li><a id="myBtn" style="cursor: pointer;">Help</a></li>
 			</ul>
 		</nav>
 
-		<div class="welcome" id="welcomescreen">
+		<!-- <div class="welcome" id="welcomescreen">
 			<h1 id="changetxtwelcome">Welcome</h1>
 			<h3>Deep font is a machine learning web app for you to create many new different fonts by mixmatching popular fonts.</h3>
 			<button id="closewelcome">Lets make fonts!</button>
 			<div class="speachcontentTwo">
 				<div class="arrow" style="transform:rotate(180deg); padding-top: 38px; margin-right: 8px;">
-					<img src="photos/arrow.svg" width="100%">
+					<img src="arrow.svg" width="100%">
 				</div>
 				<p>Learn how to use
 					this web app!</p>
 			</div>
 			<div class="speachcontentThree">
 				<div class="arrow" style="transform:rotateY(180deg); padding-top: 8px; margin-right: 8px;">
-					<img src="photos/arrow.svg" width="100%">
+					<img src="arrow.svg" width="100%">
 				</div>
 				<p>Change the appearance 
 					to your liking!</p>
 			</div>
-		</div>
+		</div> -->
 
-		<div class="deepLetters" id="fontCanvas">
+		<div class="deepLetters">
 			<!--P5 js goes here-->
 			<button class="saveoutput" id="saveButton"><i class="fa fa-save"></i></button>
 		</div>
+
 		<script src="processing.js"></script>
 
 		<div class="queue">
 			<!--title statment-->
-			<div class="queuetitle">
+			<div class="queuetitle" style="border-left: 0;">
 				<h1>Your queue</h1>
 			</div>
 
@@ -97,16 +97,16 @@
 
 			</div>
 
-			<button class="additems" id="myFontBtn">Add fonts</button>
+			<button class="additems" style="border-left: 0;" id="myFontBtn">Add fonts</button>
 
 		</div>
 		<footer>
 			<div class="left">
 				<!--Dark Mode-->
-				<h3>Mode: <span style="font-weight: 700;">Light</span> | Dark</h3>
+				<button id="mode-toggle" onclick="toggleMode()">Light Mode</button>
 			</div>
 			<div class="mid">
-				<h2>Kauffman &copy; 2020</h2>
+				<h2>Kauffman &copy; 2023</h2>
 			</div>
 			<div class="right" style="font-weight: 700; padding-top: 11px;">
 				<h3>USA &#9662;</h3>
@@ -168,9 +168,11 @@
 							<div class="half1">
 								<h2>Insert</h2>
 								<br>
-								<p>Find fonts you like in the font list you wish to add into your Queue. You need at lease 2 fonts in order to make new fonts.</p>
+								<p>Find fonts you like in the font list you wish to add into your Queue. You need at
+									lease 2 fonts in order to make new fonts.</p>
 								<br>
-								<p>When you find your fonts of your choice, you will see your fonts on the left panel of the queue.</p>
+								<p>When you find your fonts of your choice, you will see your fonts on the left panel of
+									the queue.</p>
 							</div>
 							<div class="half2">
 								<img src="photos/fontchoise3x.png" class="svgholders" alt="Image svg animation"
@@ -183,7 +185,8 @@
 								<h2>Watch</h2>
 								<br>
 								<p> Take a step back and watch the ML create the new fonts! You can
-									reorder the list to prioritize what font face you like and it will change the font to
+									reorder the list to prioritize what font face you like and it will change the font
+									to
 									your liking.
 								</p>
 							</div>
@@ -197,7 +200,8 @@
 							<div class="half1">
 								<h2>Print</h2>
 								<br>
-								<p>You can export your custom font to web font or poster font. Click save to save in your downloads and you will have a zip file of your
+								<p>You can export your custom font to web font or poster font. Click save to save in
+									your downloads and you will have a zip file of your
 									custom font you have created.</p>
 							</div>
 							<div class="half2">
