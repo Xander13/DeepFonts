@@ -91,6 +91,7 @@ nav {
 	right: 0;
 	bottom: 0;
 	transition: 0.1s ease-in;
+	color: var(--dark-color);
 }
 
 .saveoutput i {
@@ -100,11 +101,12 @@ nav {
 	left: 0;
 	right: 0;
 	margin: auto;
+
 }
 
 .saveoutput:hover,
 .saveModal button:hover,
-.welcome button:hover {
+.welcome button:hover{
 	transition: 0.1s ease-in;
 	background-color: var(--dark-color);
 	color: var(--light-color);
